@@ -1,11 +1,14 @@
 import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
+import { ArticleContextProvider } from "../contexts/ArticleContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ArticleContextProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ArticleContextProvider>
   );
 }
 
